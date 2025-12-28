@@ -1,66 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Store Browser</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Store Browser</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Online Store Browser</h1>
-    </header>
-    <div class="filter">
-        <label for="category">Filter by Category:</label>
-        <select id="category" onchange="filterProducts()">
-            <option value="all">All</option>
-            <option value="Mobile & Accessories">Mobile & Accessories</option>
-            <option value="accessories-men">Accessories Men</option>
-            <option value="accessories-women">Accessories Women</option>
-            <option value="sport-accessories">Sport Accessories</option>
-        </select>
-    </div>
-<div class="search">
+  <header>
+    <h1>Online Store Browser</h1>
+  </header>
+
+  <div class="filter">
+    <label for="category">Choose a category:</label>
+    <select id="category">
+      <option value="all">All Products</option>
+      <option value="fashion">Fashion</option>
+      <option value="electronics">Electronics</option>
+      <option value="home">Home & Living</option>
+    </select>
+  </div>
+
+  <div class="search">
     <input type="text" id="searchBar" placeholder="Search products...">
-</div>
-    <div class="products" id="product-list">
-        <div class="product" data-category="Mobile & Accessories">
-            <img src="tshirt1.jpg" alt="Destop Fan">
-            <div class="product-info">
-                <h3>Destop Fan</h3>
-                <a href="https://s.shopee.com.my/3Vd4VUZrn0" target="_blank">Buy Now</a>
-            </div>
-        </div>
-        <div class="product" data-category="Mobile & Accessories">
-            <img src="tshirt1.jpg" alt="Mini Powerbank">
-            <div class="product-info">
-                <h3>Mini Powerbank</h3>
-                <a href="https://s.shopee.com.my/4LCBWjxvYn" target="_blank">Buy Now</a>
-            </div>
-        </div>
-        <div class="product" data-category="accessories-men">
-            <img src="accessory-men1.jpg" alt="Accessory Men 1">
-            <div class="product-info">
-                <h3>Accessory Men 1</h3>
-                <a href="https://shopee.com/accessory-men1" target="_blank">Buy Now</a>
-            </div>
-        </div>
-        <div class="product" data-category="accessories-women">
-            <img src="accessory-women1.jpg" alt="Accessory Women 1">
-            <div class="product-info">
-                <h3>Accessory Women 1</h3>
-                <a href="https://shopee.com/accessory-women1" target="_blank">Buy Now</a>
-            </div>
-        </div>
-        <div class="product" data-category="sport-accessories">
-            <img src="sport-accessory1.jpg" alt="Sport Accessory 1">
-            <div class="product-info">
-                <h3>Sport Accessory 1</h3>
-                <a href="https://shopee.com/sport-accessory1" target="_blank">Buy Now</a>
-            </div>
-        </div>
+  </div>
+
+  <div class="products">
+    <div class="product" data-category="fashion">
+      <img src="product1.jpg" alt="Product 1">
+      <div class="product-info">
+        <h3>Fashion Shirt</h3>
+        <p>Trendy fashion item.</p>
+        <a href="#">View Details</a>
+      </div>
     </div>
-    <script src="script.js"></script>
+
+    <div class="product" data-category="electronics">
+      <img src="product2.jpg" alt="Product 2">
+      <div class="product-info">
+        <h3>Smartphone</h3>
+        <p>Latest gadget for tech lovers.</p>
+        <a href="#">View Details</a>
+      </div>
+    </div>
+
+    <div class="product" data-category="home">
+      <img src="product3.jpg" alt="Product 3">
+      <div class="product-info">
+        <h3>Cozy Sofa</h3>
+        <p>Perfect for your living space.</p>
+        <a href="#">View Details</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
