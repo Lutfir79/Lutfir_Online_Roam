@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store Browser</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .filter {
+            margin: 1rem;
+            text-align: center;
+        }
+        select {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .product {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .product img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .product-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .product-info a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+        .product-info a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .products {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Store Browser</h1>
+    </header>
+    <div class="filter">
+        <label for="category">Filter by Category:</label>
+        <select id="category" onchange="filterProducts()">
+            <option value="all">All</option>
+            <option value="Mobile & Accessories">Mobile & Accessories</option>
+            <option value="accessories-men">Accessories Men</option>
+            <option value="accessories-women">Accessories Women</option>
+            <option value="sport-accessories">Sport Accessories</option>
+        </select>
+    </div>
+    <div class="products" id="product-list">
+        <div class="product" data-category="Mobile & Accessories">
+            <img src="tshirt1.jpg" alt="Destop Fan">
+            <div class="product-info">
+                <h3>Destop Fan</h3>
+                <a href="https://s.shopee.com.my/3Vd4VUZrn0" target="_blank">Buy Now</a>
+            </div>
+        </div>
+        <div class="product" data-category="Mobile & Accessories">
+            <img src="tshirt1.jpg" alt="Mini Powerbank">
+            <div class="product-info">
+                <h3>Mini Powerbank</h3>
+                <a href="https://s.shopee.com.my/4LCBWjxvYn" target="_blank">Buy Now</a>
+            </div>
+        </div>
+        <div class="product" data-category="accessories-men">
+            <img src="accessory-men1.jpg" alt="Accessory Men 1">
+            <div class="product-info">
+                <h3>Accessory Men 1</h3>
+                <a href="https://shopee.com/accessory-men1" target="_blank">Buy Now</a>
+            </div>
+        </div>
+        <div class="product" data-category="accessories-women">
+            <img src="accessory-women1.jpg" alt="Accessory Women 1">
+            <div class="product-info">
+                <h3>Accessory Women 1</h3>
+                <a href="https://shopee.com/accessory-women1" target="_blank">Buy Now</a>
+            </div>
+        </div>
+        <div class="product" data-category="sport-accessories">
+            <img src="sport-accessory1.jpg" alt="Sport Accessory 1">
+            <div class="product-info">
+                <h3>Sport Accessory 1</h3>
+                <a href="https://shopee.com/sport-accessory1" target="_blank">Buy Now</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function filterProducts() {
+            const category = document.getElementById('category').value;
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                if (category === 'all' || product.getAttribute('data-category') === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
